@@ -40,7 +40,7 @@ CROWD_EMOJI = {"LOW": "🟢",      "MEDIUM": "🟡",      "HIGH": "🔴"}
 def _fetch_status():
     """Call GET /routes-status.  Returns (data_dict, error_str)."""
     try:
-        resp = requests.get(ROUTES_STATUS_URL, timeout=6)
+        resp = requests.get(ROUTES_STATUS_URL, timeout=10)
         resp.raise_for_status()
         return resp.json(), None
     except requests.exceptions.ConnectionError:
